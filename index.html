@@ -14,7 +14,8 @@
 	<meta property="og:title" content="Mahery RAZAFIMANANTSOA | Développeur Full Stack React & Java">
 	<meta property="og:description"
 		content="Développeur Freelance expert en React et Java à Antananarivo. Solutions web robustes et scalables. Consultez mon portfolio.">
-	<meta property="og:image" content="https://razafimanantsoaamarah-droid.github.io/public/media/preview-portfolio.jpeg">
+	<meta property="og:image"
+		content="https://razafimanantsoaamarah-droid.github.io/public/media/preview-portfolio.jpeg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="627">
 	<meta property="og:site_name" content="Portfolio Mahery Razafimanantsoa">
@@ -24,58 +25,247 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="public/favicon_io/favicon-16x16.png">
 	<link rel="manifest" href="/public/favicon_io/site.webmanifest">
 	<meta name="google-site-verification" content="jbEDFz46CHRe8VRrqQoQE9qhfdPAaBqbd3_oOSbou1w" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'serif': ['Cinzel', 'Noto Serif SC', 'serif'],
-                        'sans': ['Noto Sans JP', 'sans-serif'],
-                        'chinese': ['Noto Serif SC', 'serif'],
-                        'japanese': ['Noto Sans JP', 'sans-serif'],
-                    },
-                    colors: {
-                        'sumi': '#0D0D0D',
-                        'obsidian': '#1A1A1A',
-                        'ink': '#1a1a1a',
-                        'silk': '#f8f5f0',
-                        'vermilion': '#E63946',
-                        'jade': '#00A86B',
-                        'gold': '#D4AF37',
-                        'mystic-red': '#8B0000',
-                        'indigo': '#2c3e5e',
-                        'sakura': '#f8c8dc',
-                        'bamboo': '#7ba05b',
-                    },
-                    backgroundImage: {
-                        'rice-paper': "url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\" fill=\"%23000000\" fill-opacity=\"0.03\" fill-rule=\"evenodd\"/%3E%3C/svg%3E')",
-                        'dark-rice': "url('https://www.transparenttextures.com/patterns/dark-matter.png')",
-                    },
-                    animation: {
-                        'ink-flow': 'inkFlow 2s ease-out',
-                        'sakura-fall': 'sakuraFall 15s linear infinite',
-                        'cloud-float': 'cloudFloat 20s linear infinite',
-                        'fade-in': 'fadeIn 1s ease-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                        'section-pulse': 'sectionPulse 3s ease-in-out infinite',
-                        'slide-down': 'slideDown 0.3s ease-out',
-                    }
-                }
-            }
-        }
-    </script>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+		rel="stylesheet">
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					fontFamily: {
+						'serif': ['Cinzel', 'Noto Serif SC', 'serif'],
+						'sans': ['Noto Sans JP', 'sans-serif'],
+						'chinese': ['Noto Serif SC', 'serif'],
+						'japanese': ['Noto Sans JP', 'sans-serif'],
+					},
+					colors: {
+						'sumi': '#0D0D0D',
+						'obsidian': '#1A1A1A',
+						'ink': '#1a1a1a',
+						'silk': '#f8f5f0',
+						'vermilion': '#E63946',
+						'jade': '#00A86B',
+						'gold': '#D4AF37',
+						'mystic-red': '#8B0000',
+						'indigo': '#2c3e5e',
+						'sakura': '#f8c8dc',
+						'bamboo': '#7ba05b',
+					},
+					backgroundImage: {
+						'rice-paper': "url('data:image/svg+xml,%3Csvg width=\"100\" height=\"100\" viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\" fill=\"%23000000\" fill-opacity=\"0.03\" fill-rule=\"evenodd\"/%3E%3C/svg%3E')",
+						'dark-rice': "url('https://www.transparenttextures.com/patterns/dark-matter.png')",
+					},
+					animation: {
+						'ink-flow': 'inkFlow 2s ease-out',
+						'sakura-fall': 'sakuraFall 15s linear infinite',
+						'cloud-float': 'cloudFloat 20s linear infinite',
+						'fade-in': 'fadeIn 1s ease-out',
+						'slide-up': 'slideUp 0.8s ease-out',
+						'float': 'float 6s ease-in-out infinite',
+						'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+						'section-pulse': 'sectionPulse 3s ease-in-out infinite',
+						'slide-down': 'slideDown 0.3s ease-out',
+					}
+				}
+			}
+		}
+	</script>
+	<link rel="stylesheet" href="./srcs/css/style.css">
 </head>
 
 <body>
+	<header class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 section-pulse"
+		id="home">
+		<div class="absolute inset-0 z-0">
+			<img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070"
+				class="w-full h-full object-cover opacity-20 scale-110">
+			<div class="absolute inset-0 bg-gradient-to-t from-sumi via-transparent to-sumi"></div>
+			<div class="absolute inset-0 bg-rice-paper opacity-10"></div>
+		</div>
+		<div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+			<div id="hero-tag"
+				class="inline-block shoji-screen px-4 py-2 rounded-lg text-gold text-xs sm:text-sm font-bold tracking-widest mb-6 sm:mb-8 opacity-0 border border-gold/30">
+				<i class="fas fa-graduation-cap mr-2"></i>ÉTUDIANT L2 @ HEI MADAGASCAR
+			</div>
+			<h1 id="hero-title" class="text-4xl sm:text-6xl md:text-9xl font-serif font-bold text-white mb-6 opacity-0">
+				<span class="calligraphy text-vermilion neon-glow">馬赫里</span>
+				<span
+					class="text-white opacity-90 text-2xl sm:text-4xl md:text-6xl tracking-tighter block mt-4">RAZAFIMANANTSOA</span>
+			</h1>
+			<p id="hero-sub"
+				class="text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 sm:mb-12 max-w-3xl mx-auto opacity-0 leading-relaxed px-4">
+				Architecte digital spécialisé dans la création d'expériences numériques
+				<span class="text-vermilion font-medium">harmonieuses</span>.
+				Fusion de <span class="text-gold">précision japonaise</span> et
+				<span class="text-jade">sagesse chinoise</span>.
+			</p>
+
+			<div id="hero-cta" class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 opacity-0 px-4">
+				<a href="#projects"
+					class="japanese-border px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-white hover:text-gold transition-all duration-300 flex items-center justify-center gap-3 group bg-obsidian/50 mobile-full-width">
+					<i class="fas fa-eye group-hover:rotate-12 transition-transform"></i>
+					Voir mes travaux
+				</a>
+				<a href="#contact"
+					class="bg-gradient-to-r from-vermilion to-gold text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 mobile-full-width">
+					<i class="fas fa-comments"></i>
+					Parlons projet
+				</a>
+			</div>
+		</div>
+		<div class="absolute bottom-10 left-1/2 -translate-x-1/2">
+			<div class="w-px h-16 bg-gradient-to-b from-vermilion via-gold to-transparent"></div>
+		</div>
+		<div class="absolute bottom-10 left-4 sm:left-10 flex flex-col gap-2 opacity-30">
+			<span class="[writing-mode:vertical-rl] text-gold text-xs tracking-[1em]">PORTFOLIO 2026</span>
+			<div class="w-px h-20 bg-gold mx-auto"></div>
+		</div>
+	</header>
+	<nav class="sticky-navbar" id="navbar">
+		<div class="w-full bg-sumi/90 backdrop-blur-md border-b border-gold/10">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex justify-between items-center h-16">
+					<!-- Logo -->
+					<div class="flex-shrink-0">
+						<a href="#home" class="font-serif text-2xl sm:text-3xl text-white flex items-center gap-2">
+							<span
+								class="seal-3d px-2 py-1 rounded-sm bg-vermilion text-white text-xl sm:text-2xl">馬</span>
+							<span class="text-gold tracking-widest hidden sm:inline ml-2">MAHERY</span>
+						</a>
+					</div>
+
+					<!-- Desktop Menu -->
+					<div class="hidden md:flex items-center space-x-2">
+						<div class="shoji-screen px-6 py-2 rounded-full flex gap-6 text-sm font-medium">
+							<a href="#about" class="nav-link text-white hover:text-gold transition-colors">
+								<i class="fas fa-mountain text-vermilion mr-2"></i>Parcours
+							</a>
+							<a href="#projects" class="nav-link text-white hover:text-gold transition-colors">
+								<i class="fas fa-torii-gate text-gold mr-2"></i>Projets
+							</a>
+							<a href="#experience" class="nav-link text-white hover:text-gold transition-colors">
+								<i class="fas fa-scroll text-vermilion mr-2"></i>Expérience
+							</a>
+							<a href="#contact" class="nav-link text-white hover:text-vermilion transition-colors">
+								<i class="fas fa-lantern text-gold mr-2"></i>Contact
+							</a>
+						</div>
+					</div>
+
+					<!-- Mobile menu button -->
+					<div class="md:hidden">
+						<button id="mobile-menu-button"
+							class="menu-btn shoji-screen p-3 rounded-lg text-white hover:text-gold transition-colors">
+							<i id="menu-icon" class="fas fa-bars text-lg"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="mobile-menu" class="mobile-menu-container md:hidden shoji-screen">
+			<div class="px-4 py-3 space-y-2">
+				<a href="#home"
+					class="mobile-nav-link block px-3 py-3 rounded-lg text-white hover:bg-gold/10 hover:text-gold transition-colors">
+					<i class="fas fa-home text-vermilion mr-3"></i>Accueil
+				</a>
+				<a href="#about"
+					class="mobile-nav-link block px-3 py-3 rounded-lg text-white hover:bg-gold/10 hover:text-gold transition-colors">
+					<i class="fas fa-mountain text-vermilion mr-3"></i>Parcours
+				</a>
+				<a href="#projects"
+					class="mobile-nav-link block px-3 py-3 rounded-lg text-white hover:bg-gold/10 hover:text-gold transition-colors">
+					<i class="fas fa-torii-gate text-gold mr-3"></i>Projets
+				</a>
+				<a href="#experience"
+					class="mobile-nav-link block px-3 py-3 rounded-lg text-white hover:bg-gold/10 hover:text-gold transition-colors">
+					<i class="fas fa-scroll text-vermilion mr-3"></i>Expérience
+				</a>
+				<a href="#contact"
+					class="mobile-nav-link block px-3 py-3 rounded-lg text-white hover:bg-gold/10 hover:text-vermilion transition-colors">
+					<i class="fas fa-lantern text-gold mr-3"></i>Contact
+				</a>
+			</div>
+		</div>
+	</nav>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.getElementById('navbar');
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        // Effet de scroll (optionnel - pour changer l'opacité)
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Gestion du menu mobile (identique)
+        if (menuButton) {
+            menuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('mobile-menu-open');
+                menuButton.classList.toggle('open');
+                
+                if (mobileMenu.classList.contains('mobile-menu-open')) {
+                    menuIcon.className = 'fas fa-times text-lg';
+                } else {
+                    menuIcon.className = 'fas fa-bars text-lg';
+                }
+            });
+        }
+        
+        // Fermeture du menu (identique)
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('mobile-menu-open');
+                if (menuButton) {
+                    menuButton.classList.remove('open');
+                }
+                if (menuIcon) {
+                    menuIcon.className = 'fas fa-bars text-lg';
+                }
+            });
+        });
+        
+        // Click outside (identique)
+        document.addEventListener('click', function(event) {
+            if (menuButton && mobileMenu && 
+                !menuButton.contains(event.target) && 
+                !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.remove('mobile-menu-open');
+                menuButton.classList.remove('open');
+                if (menuIcon) {
+                    menuIcon.className = 'fas fa-bars text-lg';
+                }
+            }
+        });
+        
+        // Smooth scroll (identique)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>
