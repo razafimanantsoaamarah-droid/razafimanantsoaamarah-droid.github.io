@@ -2,7 +2,7 @@
   "name": "Mahery RAZAFIMANANTSOA - Portfolio",
   "short_name": "Mahery Dev",
   "description": "Développeur Full Stack React & Java",
-  "start_url": "/",
+  "start_url": "/public",
   "icons": [
     {
       "src": "/public/android-chrome-192x192.png",
