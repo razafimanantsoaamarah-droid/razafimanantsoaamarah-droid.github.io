@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahery R. | Architecte Full Stack React & Java</title>
+    <meta name="description"
+        content="Développeur full stack freelance à Antananarivo. Expert React et Java, je conçois des applications web performantes et évolutives.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://razafimanantsoaamaarahdroid.io">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://razafimanantsoaamaarahdroid.io">
+    <meta property="og:title" content="Mahery RAZAFIMANANTSOA | Développeur Full Stack React & Java">
+    <meta property="og:description"
+        content="Développeur Freelance expert en React et Java. Solutions web robustes et scalables.">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=1974&auto=format&fit=crop">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:site_name" content="Portfolio Mahery Razafimanantsoa">
+    <meta property="og:locale" content="fr_FR">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/favicon_io/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="public/favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="/public/favicon_io/site.webmanifest">
+    <meta name="google-site-verification" content="jbEDFz46CHRe8VRrqQoQE9qhfdPAaBqbd3_oOSbou1w" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Better Icons Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <!-- Unique Font Pairings -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Noto+Serif+JP:wght@400;700&family=Zhi+Mang+Xing&family=Ma+Shan+Zheng&family=Long+Cang&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'japanese': ['Noto Sans JP', 'sans-serif'],
+                        'japanese-serif': ['Noto Serif JP', 'serif'],
+                        'brush': ['Zhi Mang Xing', 'cursive'],
+                        'calligraphy': ['Ma Shan Zheng', 'cursive'],
+                        'handwriting': ['Long Cang', 'cursive'],
+                    },
+                    colors: {
+                        'duo-green': '#58CC02',
+                        'duo-green-dark': '#46A302',
+                        'duo-yellow': '#FFC800',
+                        'duo-blue': '#1CB0F6',
+                        'duo-red': '#FF4B4B',
+                        'duo-purple': '#CE82FF',
+                        'duo-pink': '#FF9EE0',
+                        'paper': '#FFF9F0',
+                        'ink': '#1A1A1A',
+                        'gold-chinese': '#D4AF37',
+                        'jade': '#00A86B',
+                        'vermilion': '#E63946',
+                        'sakura': '#FFB7C5',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'fade-in': 'fade-in 0.8s ease-out',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'twinkle': 'twinkle 2s ease-in-out infinite',
+                        'sparkle': 'sparkle 1.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'bounce-gentle': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(88, 204, 2, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(88, 204, 2, 0.6)' },
+                        },
+                        twinkle: {
+                            '0%, 100%': { opacity: 0.3, transform: 'scale(0.8)' },
+                            '50%': { opacity: 1, transform: 'scale(1.2)' },
+                        },
+                        sparkle: {
+                            '0%': { transform: 'scale(0) rotate(0deg)', opacity: 0 },
+                            '50%': { transform: 'scale(1) rotate(180deg)', opacity: 1 },
+                            '100%': { transform: 'scale(0) rotate(360deg)', opacity: 0 },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg-primary: linear-gradient(135deg, #FFF9F0 0%, #F5EDE0 100%);
+            --bg-secondary: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #6B7280;
+            --border-color: #E5E5E5;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            --bg-secondary: #2D2D2D;
+            --text-primary: #F5F5F5;
+            --text-secondary: #A0A0A0;
+            --border-color: #404040;
+        }
+
+        [data-theme="blue"] {
+            --bg-primary: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 100%);
+            --bg-secondary: #F0F9FF;
+            --text-primary: #0C4A6E;
+            --text-secondary: #475569;
+            --border-color: #7DD3FC;
+        }
+
+        [data-theme="purple"] {
+            --bg-primary: linear-gradient(135deg, #F3E8FF 0%, #E9D5FF 100%);
+            --bg-secondary: #FAF5FF;
+            --text-primary: #581C87;
+            --text-secondary: #6B7280;
+            --border-color: #D8B4FE;
+        }
+
+        [data-theme="sunset"] {
+            --bg-primary: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);
+            --bg-secondary: #FFE6E6;
+            --text-primary: #7F1D1D;
+            --text-secondary: #991B1B;
+            --border-color: #FECACA;
+        }
+
+        [data-theme="forest"] {
+            --bg-primary: linear-gradient(135deg, #D9F0E1 0%, #A7D9B5 100%);
+            --bg-secondary: #E5F4E8;
+            --text-primary: #14532D;
+            --text-secondary: #166534;
+            --border-color: #86EFAC;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 9999;
+            background: var(--bg-secondary);
+            border-radius: 50px;
+            padding: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--border-color);
+        }
+
+        .theme-button {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin: 8px 0;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .theme-button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-button.active {
+            border-color: #58CC02;
+            box-shadow: 0 0 20px rgba(88, 204, 2, 0.5);
+        }
+
+        .theme-light {
+            background: linear-gradient(135deg, #FFF9F0, #F5EDE0);
+            color: #1A1A1A;
+        }
+
+        .theme-dark {
+            background: linear-gradient(135deg, #1A1A1A, #2D2D2D);
+            color: white;
+        }
+
+        .theme-blue {
+            background: linear-gradient(135deg, #1CB0F6, #0E8BC9);
+            color: white;
+        }
+
+        .theme-purple {
+            background: linear-gradient(135deg, #CE82FF, #B065FF);
+            color: white;
+        }
+
+        .theme-sunset {
+            background: linear-gradient(135deg, #FF9A9E, #FAD0C4);
+            color: #7F1D1D;
+        }
+
+        .theme-forest {
+            background: linear-gradient(135deg, #86EFAC, #4ADE80);
+            color: #14532D;
+        }
+
+        /* Fireworks Canvas */
+        #fireworks-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Achievement Badge */
+        .achievement-badge {
+            background: linear-gradient(135deg, #FFC800 0%, #FFD700 100%);
+            border: 4px solid #fff;
+            box-shadow: 0 8px 24px rgba(255, 200, 0, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .achievement-badge:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 12px 32px rgba(255, 200, 0, 0.6);
+        }
+
+        /* Mascot Character */
+        .mascot-character {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #58CC02, #46A302);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(88, 204, 2, 0.4);
+            z-index: 999;
+        }
+
+        .mascot-character:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .mascot-character::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .mascot-character::after {
+            content: '';
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 30px;
+            background: #2A5934;
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Speech Bubble */
+        .speech-bubble {
+            position: absolute;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            bottom: 140px;
+            right: 0;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            color: #1A1A1A;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 40px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+        }
+
+        .mascot-character:hover .speech-bubble {
+            opacity: 1;
+        }
+
+        /* Japanese Paper Texture */
+        .washi-paper {
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(230, 57, 70, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 168, 107, 0.03) 0%, transparent 50%);
+        }
+
+        /* Streak Counter */
+        .streak-counter {
+            background: linear-gradient(135deg, #FF4B4B, #FF6B6B);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(255, 75, 75, 0.3);
+        }
+
+        .streak-counter::before {
+            content: '';
+            width: 20px;
+            height: 26px;
+            background: linear-gradient(to top, #FF4B4B, #FFC800);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        /* Level System */
+        .level-badge {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1CB0F6, #0E8BC9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 6px 20px rgba(28, 176, 246, 0.4);
+            border: 4px solid white;
+        }
+
+        .level-badge::before {
+            content: 'LVL';
+            position: absolute;
+            top: -8px;
+            font-size: 10px;
+            font-weight: 700;
+            background: #FFC800;
+            padding: 2px 6px;
+            border-radius: 8px;
+            color: #1A1A1A;
+        }
+
+        /* XP Points Display */
+        .xp-bar {
+            background: rgba(229, 229, 229, 0.3);
+            height: 10px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        .xp-bar-fill {
+            background: linear-gradient(90deg, #58CC02, #46A302);
+            height: 100%;
+            border-radius: 20px;
+            transition: width 1s ease;
+            position: relative;
+        }
+
+        .xp-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 20px 20px 0 0;
+        }
+
+        /* Card with Duolingo Style */
+        .duo-card {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 3px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .duo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #58CC02, #FFC800, #1CB0F6, #CE82FF);
+        }
+
+        .duo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+            border-color: #58CC02;
+        }
+
+        /* Button Styles - Duolingo Inspired */
+        .btn-duo {
+            background: linear-gradient(180deg, #58CC02 0%, #46A302 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            box-shadow: 0 6px 0 #46A302, 0 8px 24px rgba(88, 204, 2, 0.3);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-duo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #46A302, 0 12px 32px rgba(88, 204, 2, 0.4);
+        }
+
+        .btn-duo:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #46A302, 0 4px 16px rgba(88, 204, 2, 0.3);
+        }
+
+        .btn-duo-secondary {
+            background: linear-gradient(180deg, #1CB0F6 0%, #0E8BC9 100%);
+            box-shadow: 0 6px 0 #0E8BC9, 0 8px 24px rgba(28, 176, 246, 0.3);
+        }
+
+        .btn-duo-secondary:hover {
+            box-shadow: 0 8px 0 #0E8BC9, 0 12px 32px rgba(28, 176, 246, 0.4);
+        }
+
+        /* Lantern Decoration */
+        .lantern {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: linear-gradient(135deg, #FF4B4B, #FF6B6B);
+            border-radius: 8px;
+            opacity: 0.5;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .lantern::before {
+            content: '福';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFC800;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .lantern::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 8px;
+            background: #FFC800;
+            border-radius: 50%;
+        }
+
+        /* Cherry Blossom */
+        .sakura {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: #FFB7C5;
+            border-radius: 50% 0 50% 0;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        /* Seal Stamp */
+        .seal-stamp {
+            display: inline-block;
+            background: #E63946;
+            color: white;
+            padding: 6px 10px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 16px;
+            font-weight: 700;
+            border: 2px solid #C62C38;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+            transform: rotate(-3deg);
+            transition: all 0.3s ease;
+        }
+
+        .seal-stamp:hover {
+            transform: rotate(-1deg) scale(1.05);
+        }
+
+        /* Trophy Case */
+        .trophy {
+            width: 90px;
+            height: 110px;
+            background: linear-gradient(135deg, #FFC800, #FFD700);
+            border-radius: 8px 8px 40px 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(255, 200, 0, 0.4);
+            transition: all 0.3s ease;
+            margin: 0 auto;
+        }
+
+        .trophy::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45px;
+            height: 45px;
+            background: #FFD700;
+            border-radius: 50% 50% 0 0;
+            box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .trophy:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 32px rgba(255, 200, 0, 0.6);
+        }
+
+        .trophy::before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            width: 70px;
+            height: 25px;
+            background: linear-gradient(135deg, #D4AF37, #B8982F);
+            border-radius: 5px;
+        }
+
+        /* Skill Node */
+        .skill-node {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #58CC02, #46A302);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid white;
+            box-shadow: 0 6px 20px rgba(88, 204, 2, 0.4);
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 26px;
+            font-weight: 900;
+            color: white;
+            margin: 0 auto;
+        }
+
+        .skill-node.locked {
+            background: linear-gradient(135deg, #E5E5E5, #D0D0D0);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-node:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 28px rgba(88, 204, 2, 0.6);
+        }
+
+        .skill-node::after {
+            content: attr(data-level);
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background: #FFC800;
+            color: #1A1A1A;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            border: 2px solid white;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            padding: 32px;
+            border-radius: 24px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 3px solid var(--border-color);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        /* Confetti Animation */
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #FFC800;
+            animation: confetti-fall 3s linear;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* Navigation - Duolingo Style */
+        .nav-duo {
+            background: var(--bg-secondary);
+            border-bottom: 3px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-link-duo {
+            color: var(--text-primary);
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link-duo:hover {
+            background: rgba(88, 204, 2, 0.1);
+            color: #58CC02;
+        }
+
+        .nav-link-duo.active {
+            background: #58CC02;
+            color: white;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #58CC02, #46A302);
+            border-radius: 20px;
+            border: 2px solid var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #46A302, #3A8602);
+        }
+
+        /* Tooltip */
+        [data-tooltip] {
+            position: relative;
+        }
+
+        [data-tooltip]::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1A1A1A;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        [data-tooltip]:hover::after {
+            opacity: 1;
+        }
+
+        /* Back to Top */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #58CC02, #46A302);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 4px 12px rgba(88, 204, 2, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        #backToTop:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(88, 204, 2, 0.6);
+        }
+
+        #backToTop.hidden {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .theme-switcher {
+                right: 10px;
+                padding: 6px;
+            }
+
+            .theme-button {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+                margin: 5px 0;
+            }
+
+            .mascot-character {
+                width: 80px;
+                height: 80px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .mascot-character::before {
+                width: 45px;
+                height: 45px;
+            }
+
+            .mascot-character::after {
+                width: 30px;
+                height: 22px;
+            }
+
+            .speech-bubble {
+                display: none;
+            }
+
+            .lantern {
+                width: 35px;
+                height: 50px;
+            }
+
+            .trophy {
+                width: 70px;
+                height: 90px;
+            }
+
+            .level-badge {
+                width: 55px;
+                height: 55px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-japanese washi-paper" data-theme="light">
+
+    <!-- Theme Switcher (Vertical) -->
+    <div class="theme-switcher">
+        <button class="theme-button theme-light active" onclick="changeTheme('light')" data-tooltip="Light">
+            <i class="bi bi-sun-fill"></i>
+        </button>
+        <button class="theme-button theme-dark" onclick="changeTheme('dark')" data-tooltip="Dark">
+            <i class="bi bi-moon-stars-fill"></i>
+        </button>
+        <button class="theme-button theme-blue" onclick="changeTheme('blue')" data-tooltip="Ocean">
+            <i class="bi bi-water"></i>
+        </button>
+        <button class="theme-button theme-purple" onclick="changeTheme('purple')" data-tooltip="Purple">
+            <i class="bi bi-star-fill"></i>
+        </button>
+        <button class="theme-button theme-sunset" onclick="changeTheme('sunset')" data-tooltip="Sunset">
+            <i class="bi bi-sunset-fill"></i>
+        </button>
+        <button class="theme-button theme-forest" onclick="changeTheme('forest')" data-tooltip="Forest">
+            <i class="bi bi-tree-fill"></i>
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-duo fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-2 sm:gap-3 group">
+                <div class="level-badge text-xl sm:text-2xl">3</div>
+                <div class="hidden sm:block">
+                    <div class="font-bold text-lg sm:text-xl font-japanese">Mahery R.</div>
+                    <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Full Stack 开发者</div>
+                </div>
+            </a>
+
+            <div class="hidden md:flex gap-1 lg:gap-2 items-center">
+                <a href="#about" class="nav-link-duo text-sm lg:text-base">关于 About</a>
+                <a href="#skills" class="nav-link-duo text-sm lg:text-base">技能 Skills</a>
+                <a href="#projects" class="nav-link-duo text-sm lg:text-base">项目 Projects</a>
+                <a href="#contact" class="nav-link-duo text-sm lg:text-base">联系 Contact</a>
+                <div class="streak-counter ml-2 lg:ml-4 text-sm lg:text-base">7 天</div>
+            </div>
+
+            <button class="md:hidden text-2xl" onclick="toggleMobileMenu()">
+                <i class="bi bi-list text-duo-green"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden md:hidden border-t-3 p-4 transition-all duration-300"
+            style="background: var(--bg-secondary); border-color: var(--border-color)">
+            <a href="#about" class="nav-link-duo block mb-2 py-2" onclick="toggleMobileMenu()">关于 About</a>
+            <a href="#skills" class="nav-link-duo block mb-2 py-2" onclick="toggleMobileMenu()">技能 Skills</a>
+            <a href="#projects" class="nav-link-duo block mb-2 py-2" onclick="toggleMobileMenu()">项目 Projects</a>
+            <a href="#contact" class="nav-link-duo block py-2" onclick="toggleMobileMenu()">联系 Contact</a>
+        </div>
+    </nav>
+
+    <!-- Decorative Elements -->
+    <div class="lantern hidden lg:block" style="top: 120px; left: 5%;"></div>
+    <div class="lantern hidden lg:block" style="top: 180px; right: 5%; animation-delay: 1s;"></div>
+    <div class="sakura hidden lg:block" style="top: 220px; left: 10%; animation-delay: 0.5s;"></div>
+    <div class="sakura hidden lg:block" style="top: 320px; right: 8%; animation-delay: 1.5s;"></div>
+
+    <!-- Hero Section with Fireworks -->
+    <header id="home" class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 relative overflow-hidden">
+        <canvas id="fireworks-canvas"></canvas>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <div class="mb-6 sm:mb-8 flex justify-center gap-2 sm:gap-4 flex-wrap">
+                <div class="achievement-badge w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+                    data-tooltip="React Master">
+                    <i class="bx bxl-react text-2xl sm:text-4xl text-white"></i>
+                </div>
+                <div class="achievement-badge w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+                    data-tooltip="Java Expert">
+                    <i class="bx bxl-java text-2xl sm:text-4xl text-white"></i>
+                </div>
+                <div class="achievement-badge w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+                    data-tooltip="UI Designer">
+                    <i class="bi bi-palette-fill text-xl sm:text-3xl text-white"></i>
+                </div>
+                <div class="achievement-badge w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center"
+                    data-tooltip="Code Warrior">
+                    <i class="bi bi-code-slash text-xl sm:text-3xl text-white"></i>
+                </div>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-4 sm:mb-6 font-japanese">
+                <span class="inline-block animate-slide-up" style="animation-delay: 0.1s;">こんにちは!</span>
+                <br>
+                <span class="inline-block animate-slide-up text-duo-green text-3xl sm:text-4xl md:text-6xl lg:text-7xl"
+                    style="animation-delay: 0.2s;">I'm Mahery</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 font-japanese-serif animate-slide-up"
+                style="animation-delay: 0.3s;">
+                <span class="seal-stamp text-sm sm:text-base">全栈开发者</span>
+            </p>
+
+            <p class="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto animate-slide-up px-2"
+                style="animation-delay: 0.4s; color: var(--text-secondary)">
+                Développeur Full Stack passionné • React & Java Expert<br>
+                Basé à Antananarivo, Madagascar
+            </p>
+
+            <!-- XP Bar - Supprimée -->
+
+            <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 animate-slide-up px-4"
+                style="animation-delay: 0.6s;">
+                <button class="btn-duo text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8" onclick="scrollToSection('projects')">
+                    <i class="bi bi-rocket-takeoff-fill mr-2"></i>
+                    Voir mes projets
+                </button>
+                <button class="btn-duo btn-duo-secondary text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8" onclick="scrollToSection('contact')">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Me contacter
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating decorative elements -->
+        <div class="absolute top-1/4 left-5 sm:left-10 text-4xl sm:text-6xl opacity-10 animate-float">
+            <svg width="60" height="60" sm:width="80" sm:height="80" viewBox="0 0 100 100" class="fill-duo-green">
+                <path d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 70 L25 90 L35 60 L10 40 L40 40 Z" />
+            </svg>
+        </div>
+        <div class="absolute bottom-1/4 right-5 sm:right-10 text-4xl sm:text-6xl opacity-10 animate-float"
+            style="animation-delay: 1s;">
+            <svg width="60" height="60" sm:width="80" sm:height="80" viewBox="0 0 100 100" class="fill-vermilion">
+                <circle cx="50" cy="30" r="15" />
+                <rect x="35" y="40" width="30" height="50" rx="5" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 sm:mb-4 font-japanese">
+                关于我 <span class="text-duo-blue">About Me</span>
+            </h2>
+            <p class="text-center mb-10 sm:mb-12 md:mb-16 text-base sm:text-lg md:text-xl"
+                style="color: var(--text-secondary)">Level 3 • 7 Day Streak 🔥</p>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div class="duo-card p-5 sm:p-6 md:p-8">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=400"
+                            alt="Mahery" class="w-full rounded-xl sm:rounded-2xl mb-4 sm:mb-6 border-4 border-duo-green">
+                        <div
+                            class="absolute -top-3 -right-3 bg-duo-yellow text-ink px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg">
+                            🌟 Top Developer
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 sm:space-y-4">
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-duo-green rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="bi bi-geo-alt-fill text-white text-lg sm:text-xl"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="font-bold text-sm sm:text-base">Location</div>
+                                <div class="text-xs sm:text-sm truncate" style="color: var(--text-secondary)">Antananarivo,
+                                    Madagascar</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-duo-blue rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="bi bi-mortarboard-fill text-white text-lg sm:text-xl"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="font-bold text-sm sm:text-base">Education</div>
+                                <div class="text-xs sm:text-sm truncate" style="color: var(--text-secondary)">HEI Madagascar •
+                                    Computer Science</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-duo-purple rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="bi bi-briefcase-fill text-white text-lg sm:text-xl"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="font-bold text-sm sm:text-base">Experience</div>
+                                <div class="text-xs sm:text-sm truncate" style="color: var(--text-secondary)">3+ Years • 15+ Projects
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <div class="duo-card p-5 sm:p-6 md:p-8">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                            <i class="bi bi-bullseye text-duo-green text-xl sm:text-2xl md:text-3xl"></i>
+                            Ma Mission
+                        </h3>
+                        <p class="text-sm sm:text-base leading-relaxed" style="color: var(--text-secondary)">
+                            Créer des applications web performantes et élégantes qui résolvent de vrais problèmes.
+                            Je combine expertise technique et sens du design pour offrir des expériences utilisateur
+                            exceptionnelles.
+                        </p>
+                    </div>
+
+                    <div class="duo-card p-5 sm:p-6 md:p-8">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                            <i class="bi bi-lightning-charge-fill text-duo-yellow text-xl sm:text-2xl md:text-3xl"></i>
+                            Mes Superpowers
+                        </h3>
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div class="text-center">
+                                <i class="bx bxl-react text-3xl sm:text-4xl md:text-5xl text-duo-blue mb-1 sm:mb-2"></i>
+                                <div class="font-bold text-xs sm:text-sm">React Ninja</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="bx bxl-java text-3xl sm:text-4xl md:text-5xl text-duo-green mb-1 sm:mb-2"></i>
+                                <div class="font-bold text-xs sm:text-sm">Java Master</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="bi bi-palette-fill text-3xl sm:text-4xl md:text-5xl text-duo-purple mb-1 sm:mb-2"></i>
+                                <div class="font-bold text-xs sm:text-sm">UI Wizard</div>
+                            </div>
+                            <div class="text-center">
+                                <i class="bx bxl-docker text-3xl sm:text-4xl md:text-5xl text-duo-red mb-1 sm:mb-2"></i>
+                                <div class="font-bold text-xs sm:text-sm">DevOps Pro</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="duo-card p-5 sm:p-6 md:p-8">
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-xl sm:text-2xl md:text-3xl"></i>
+                            Achievements Unlocked
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span
+                                class="bg-duo-green text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold">15+
+                                Projects</span>
+                            <span
+                                class="bg-duo-yellow text-ink px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold">Top
+                                10% Dev</span>
+                            <span
+                                class="bg-duo-blue text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold">3
+                                Years XP</span>
+                            <span
+                                class="bg-duo-purple text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold">Code
+                                Master</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 sm:mb-4 font-japanese">
+                技能树 <span class="text-duo-purple">Skill Tree</span>
+            </h2>
+            <p class="text-center mb-10 sm:mb-12 md:mb-16 text-base sm:text-lg md:text-xl"
+                style="color: var(--text-secondary)">Unlock new abilities • Master your craft</p>
+
+            <!-- Frontend Path -->
+            <div class="duo-card p-5 sm:p-6 md:p-8 mb-6 sm:mb-8 md:mb-12">
+                <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 md:mb-8">
+                    <i class="bi bi-palette-fill text-3xl sm:text-4xl md:text-5xl text-duo-purple"></i>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">Frontend Development</h3>
+                        <p class="text-xs sm:text-sm md:text-base" style="color: var(--text-secondary)">Master Level</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="5">
+                            <i class="bx bxl-react"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">React</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 5/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="5">
+                            <i class="bx bxl-typescript"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">TypeScript</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 5/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="4">
+                            <i class="bx bxl-tailwind-css"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Tailwind CSS</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 4/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="4">
+                            <i class="bi bi-lightning-charge-fill"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Next.js</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 4/5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Path -->
+            <div class="duo-card p-5 sm:p-6 md:p-8 mb-6 sm:mb-8 md:mb-12">
+                <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 md:mb-8">
+                    <i class="bi bi-server text-3xl sm:text-4xl md:text-5xl text-duo-green"></i>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">Backend Development</h3>
+                        <p class="text-xs sm:text-sm md:text-base" style="color: var(--text-secondary)">Expert Level</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="5">
+                            <i class="bx bxl-java"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Java</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 5/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="5">
+                            <i class="bx bxl-spring-boot"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Spring Boot</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 5/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="4">
+                            <i class="bx bxl-nodejs"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Node.js</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 4/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="4">
+                            <i class="bx bxl-postgresql"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Databases</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 4/5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DevOps Path -->
+            <div class="duo-card p-5 sm:p-6 md:p-8">
+                <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 md:mb-8">
+                    <i class="bx bxl-docker text-3xl sm:text-4xl md:text-5xl text-duo-blue"></i>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold">DevOps & Tools</h3>
+                        <p class="text-xs sm:text-sm md:text-base" style="color: var(--text-secondary)">Advanced Level</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="4">
+                            <i class="bx bxl-docker"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Docker</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 4/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="4">
+                            <i class="bx bxl-git"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">Git</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 4/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="3">
+                            <i class="bx bxl-aws"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">AWS</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 3/5</div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="skill-node w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 text-lg sm:text-xl md:text-2xl"
+                            data-level="3">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                        <div class="font-bold mt-1 sm:mt-2 text-xs sm:text-sm">CI/CD</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Level 3/5</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 sm:mb-4 font-japanese">
+                项目集 <span class="text-duo-red">Projects</span>
+            </h2>
+            <p class="text-center mb-10 sm:mb-12 md:mb-16 text-base sm:text-lg md:text-xl"
+                style="color: var(--text-secondary)">Completed Challenges • Earned Rewards</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+                <!-- Project 1 -->
+                <div class="duo-card p-4 sm:p-5 md:p-6 group cursor-pointer" onclick="openProjectModal(1)">
+                    <div class="relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=400"
+                            alt="E-commerce"
+                            class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute top-3 right-3 bg-duo-green text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                            +200 XP
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">E-commerce Platform</h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-3" style="color: var(--text-secondary)">Full-stack marketplace avec
+                        paiement Stripe</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+                        <span
+                            class="bg-duo-blue/20 text-duo-blue px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">React</span>
+                        <span
+                            class="bg-duo-green/20 text-duo-green px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Spring
+                            Boot</span>
+                        <span
+                            class="bg-duo-purple/20 text-duo-purple px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">MongoDB</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-sm sm:text-base md:text-xl"></i>
+                            <span class="font-bold text-duo-yellow text-xs sm:text-sm">Achievement Unlocked</span>
+                        </div>
+                        <i class="bi bi-arrow-right text-duo-green text-sm sm:text-base md:text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="duo-card p-4 sm:p-5 md:p-6 group cursor-pointer" onclick="openProjectModal(2)">
+                    <div class="relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=400"
+                            alt="Dashboard"
+                            class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute top-3 right-3 bg-duo-blue text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                            +150 XP
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">Finance Dashboard</h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-3" style="color: var(--text-secondary)">Analytics dashboard avec
+                        graphiques interactifs</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+                        <span
+                            class="bg-duo-blue/20 text-duo-blue px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">React</span>
+                        <span
+                            class="bg-duo-green/20 text-duo-green px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">D3.js</span>
+                        <span
+                            class="bg-duo-purple/20 text-duo-purple px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">PostgreSQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-sm sm:text-base md:text-xl"></i>
+                            <span class="font-bold text-duo-yellow text-xs sm:text-sm">Achievement Unlocked</span>
+                        </div>
+                        <i class="bi bi-arrow-right text-duo-green text-sm sm:text-base md:text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="duo-card p-4 sm:p-5 md:p-6 group cursor-pointer" onclick="openProjectModal(3)">
+                    <div class="relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
+                        <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?q=80&w=400" alt="Portfolio"
+                            class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute top-3 right-3 bg-duo-purple text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                            +100 XP
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">Portfolio Artistique</h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-3" style="color: var(--text-secondary)">Site immersif avec animations
+                        GSAP</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+                        <span
+                            class="bg-duo-blue/20 text-duo-blue px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Next.js</span>
+                        <span
+                            class="bg-duo-green/20 text-duo-green px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">GSAP</span>
+                        <span
+                            class="bg-duo-purple/20 text-duo-purple px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Tailwind</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-sm sm:text-base md:text-xl"></i>
+                            <span class="font-bold text-duo-yellow text-xs sm:text-sm">Achievement Unlocked</span>
+                        </div>
+                        <i class="bi bi-arrow-right text-duo-green text-sm sm:text-base md:text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="duo-card p-4 sm:p-5 md:p-6 group cursor-pointer" onclick="openProjectModal(4)">
+                    <div class="relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=400"
+                            alt="Inventory"
+                            class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute top-3 right-3 bg-duo-yellow text-ink px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                            +180 XP
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">Inventory Manager</h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-3" style="color: var(--text-secondary)">Système de gestion complet avec
+                        reporting</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+                        <span
+                            class="bg-duo-blue/20 text-duo-blue px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Java</span>
+                        <span
+                            class="bg-duo-green/20 text-duo-green px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Spring</span>
+                        <span
+                            class="bg-duo-purple/20 text-duo-purple px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">MySQL</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-sm sm:text-base md:text-xl"></i>
+                            <span class="font-bold text-duo-yellow text-xs sm:text-sm">Achievement Unlocked</span>
+                        </div>
+                        <i class="bi bi-arrow-right text-duo-green text-sm sm:text-base md:text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="duo-card p-4 sm:p-5 md:p-6 group cursor-pointer" onclick="openProjectModal(5)">
+                    <div class="relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400" alt="Weather"
+                            class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute top-3 right-3 bg-duo-blue text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                            +80 XP
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">Weather App</h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-3" style="color: var(--text-secondary)">Application météo temps réel
+                        avec géolocalisation</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+                        <span
+                            class="bg-duo-blue/20 text-duo-blue px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">React</span>
+                        <span
+                            class="bg-duo-green/20 text-duo-green px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">OpenWeather
+                            API</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-sm sm:text-base md:text-xl"></i>
+                            <span class="font-bold text-duo-yellow text-xs sm:text-sm">Achievement Unlocked</span>
+                        </div>
+                        <i class="bi bi-arrow-right text-duo-green text-sm sm:text-base md:text-xl"></i>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="duo-card p-4 sm:p-5 md:p-6 group cursor-pointer" onclick="openProjectModal(6)">
+                    <div class="relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 sm:mb-4">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=400" alt="API"
+                            class="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div
+                            class="absolute top-3 right-3 bg-duo-red text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                            +120 XP
+                        </div>
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">REST API Platform</h3>
+                    <p class="text-xs sm:text-sm mb-2 sm:mb-3" style="color: var(--text-secondary)">API sécurisée avec JWT et
+                        documentation Swagger</p>
+                    <div class="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
+                        <span
+                            class="bg-duo-blue/20 text-duo-blue px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Spring
+                            Boot</span>
+                        <span
+                            class="bg-duo-green/20 text-duo-green px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">JWT</span>
+                        <span
+                            class="bg-duo-purple/20 text-duo-purple px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs font-bold">Swagger</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <i class="bi bi-trophy-fill text-duo-yellow text-sm sm:text-base md:text-xl"></i>
+                            <span class="font-bold text-duo-yellow text-xs sm:text-sm">Achievement Unlocked</span>
+                        </div>
+                        <i class="bi bi-arrow-right text-duo-green text-sm sm:text-base md:text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 sm:mt-10 md:mt-12">
+                <a href="https://github.com/razafimanantsoaamaarahdroid" target="_blank"
+                    class="btn-duo inline-flex items-center gap-2 text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8">
+                    <i class="bx bxl-github"></i>
+                    View All on GitHub
+                    <span class="bg-white/20 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs">+50 XP</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophy Case -->
+    <section class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-3 sm:mb-4 font-japanese">
+                奖杯柜 <span class="text-duo-yellow">Trophy Case</span>
+            </h2>
+            <p class="text-center mb-10 sm:mb-12 md:mb-16 text-base sm:text-lg md:text-xl"
+                style="color: var(--text-secondary)">Collected Achievements • Hall of Fame</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                <div class="text-center">
+                    <div class="trophy w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 mx-auto mb-2 sm:mb-3">
+                        <i class="bi bi-award-fill text-white text-2xl sm:text-3xl md:text-4xl"></i>
+                    </div>
+                    <div class="font-bold text-sm sm:text-base md:text-lg">Master Coder</div>
+                    <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Complete 15 projects</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="trophy w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 mx-auto mb-2 sm:mb-3"
+                        style="background: linear-gradient(135deg, #1CB0F6, #0E8BC9);">
+                        <i class="bi bi-bullseye text-white text-2xl sm:text-3xl md:text-4xl"></i>
+                    </div>
+                    <div class="font-bold text-sm sm:text-base md:text-lg">Perfectionist</div>
+                    <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Zero bugs deployed</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="trophy w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 mx-auto mb-2 sm:mb-3"
+                        style="background: linear-gradient(135deg, #FF4B4B, #FF6B6B);">
+                        <i class="bi bi-fire text-white text-2xl sm:text-3xl md:text-4xl"></i>
+                    </div>
+                    <div class="font-bold text-sm sm:text-base md:text-lg">7-Day Streak</div>
+                    <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Consistent coding</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="trophy w-20 h-24 sm:w-24 sm:h-28 md:w-28 md:h-32 mx-auto mb-2 sm:mb-3"
+                        style="background: linear-gradient(135deg, #CE82FF, #B065FF);">
+                        <i class="bi bi-lightning-charge-fill text-white text-2xl sm:text-3xl md:text-4xl"></i>
+                    </div>
+                    <div class="font-bold text-sm sm:text-base md:text-lg">Speed Demon</div>
+                    <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">Fast delivery rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="duo-card p-6 sm:p-8 md:p-10 lg:p-12 text-center">
+                <i class="bi bi-envelope-fill text-5xl sm:text-6xl md:text-7xl text-duo-blue mb-4 sm:mb-6"></i>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 font-japanese">
+                    联系我 <span class="text-duo-green">Contact</span>
+                </h2>
+                <p class="text-base sm:text-lg md:text-xl mb-6 sm:mb-8" style="color: var(--text-secondary)">
+                    Prêt à commencer une nouvelle quête ? Contactez-moi !
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                    <a href="mailto:mahery@example.com"
+                        class="duo-card p-4 sm:p-5 md:p-6 hover:border-duo-green transition-colors">
+                        <i class="bi bi-envelope-at-fill text-3xl sm:text-4xl text-duo-green mb-2 sm:mb-3"></i>
+                        <div class="font-bold text-base sm:text-lg mb-1">Email</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">hei.mahery.55@gmail.com</div>
+                    </a>
+
+                    <a href="tel:+261389565390"
+                        class="duo-card p-4 sm:p-5 md:p-6 hover:border-duo-blue transition-colors">
+                        <i class="bi bi-telephone-fill text-3xl sm:text-4xl text-duo-blue mb-2 sm:mb-3"></i>
+                        <div class="font-bold text-base sm:text-lg mb-1">Phone</div>
+                        <div class="text-xs sm:text-sm" style="color: var(--text-secondary)">+261 38 95 653 90</div>
+                    </a>
+                </div>
+
+                <div class="flex justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 flex-wrap">
+                    <a href="#"
+                        class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-duo-blue rounded-full flex items-center justify-center text-white text-lg sm:text-xl hover:scale-110 transition-transform"
+                        data-tooltip="LinkedIn">
+                        <i class="bx bxl-linkedin"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center text-white text-lg sm:text-xl hover:scale-110 transition-transform"
+                        data-tooltip="GitHub">
+                        <i class="bx bxl-github"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-duo-red rounded-full flex items-center justify-center text-white text-lg sm:text-xl hover:scale-110 transition-transform"
+                        data-tooltip="YouTube">
+                        <i class="bx bxl-youtube"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-duo-purple rounded-full flex items-center justify-center text-white text-lg sm:text-xl hover:scale-110 transition-transform"
+                        data-tooltip="Instagram">
+                        <i class="bx bxl-instagram"></i>
+                    </a>
+                </div>
+
+                <button class="btn-duo text-sm sm:text-base py-3 sm:py-4 px-6 sm:px-8" onclick="triggerCelebration()">
+                    <i class="bi bi-send-fill mr-2"></i>
+                    Envoyer un message
+                    <span class="ml-2 bg-white/20 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs">+10 XP</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 sm:py-10 md:py-12 px-4 sm:px-6 border-t-4 border-duo-green">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div class="text-center sm:text-left">
+                    <div class="flex items-center justify-center sm:justify-start gap-2 sm:gap-3 mb-3 sm:mb-4">
+                        <div class="level-badge w-12 h-12 sm:w-14 sm:h-14 text-lg sm:text-xl">3</div>
+                        <span class="font-bold text-base sm:text-lg md:text-xl">Mahery R.</span>
+                    </div>
+                    <p class="text-xs sm:text-sm" style="color: var(--text-secondary)">Full Stack Developer • React & Java Expert</p>
+                    <div class="streak-counter mt-3 sm:mt-4 text-xs sm:text-sm">7 天</div>
+                </div>
+
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-base sm:text-lg mb-3 sm:mb-4">Navigation</h4>
+                    <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm">
+                        <li><a href="#about" class="hover:text-duo-green transition" style="color: var(--text-secondary)">About</a>
+                        </li>
+                        <li><a href="#skills" class="hover:text-duo-green transition" style="color: var(--text-secondary)">Skills</a>
+                        </li>
+                        <li><a href="#projects" class="hover:text-duo-green transition"
+                                style="color: var(--text-secondary)">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-duo-green transition"
+                                style="color: var(--text-secondary)">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-base sm:text-lg mb-3 sm:mb-4">Technologies</h4>
+                    <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm" style="color: var(--text-secondary)">
+                        <li><i class="bx bxl-react text-duo-blue mr-1 sm:mr-2"></i>React & Next.js</li>
+                        <li><i class="bx bxl-java text-duo-green mr-1 sm:mr-2"></i>Java & Spring Boot</li>
+                        <li><i class="bi bi-palette-fill text-duo-purple mr-1 sm:mr-2"></i>UI/UX Design</li>
+                        <li><i class="bx bxl-docker text-duo-red mr-1 sm:mr-2"></i>DevOps & Cloud</li>
+                    </ul>
+                </div>
+
+                <div class="text-center sm:text-left">
+                    <h4 class="font-bold text-base sm:text-lg mb-3 sm:mb-4">Achievements</h4>
+                    <div class="flex justify-center sm:justify-start flex-wrap gap-1 sm:gap-2">
+                        <div class="achievement-badge w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                            <i class="bx bxl-react text-white text-sm sm:text-base md:text-lg"></i>
+                        </div>
+                        <div class="achievement-badge w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                            <i class="bx bxl-java text-white text-sm sm:text-base md:text-lg"></i>
+                        </div>
+                        <div class="achievement-badge w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                            <i class="bi bi-palette-fill text-white text-xs sm:text-sm md:text-base"></i>
+                        </div>
+                        <div class="achievement-badge w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center">
+                            <i class="bi bi-code-slash text-white text-xs sm:text-sm md:text-base"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t pt-6 sm:pt-8 text-center text-xs sm:text-sm"
+                style="border-color: var(--border-color); color: var(--text-secondary)">
+                <p class="font-japanese">© 2026 Mahery Razafimanantsoa • Made with <span class="text-duo-red">♥</span> in
+                    Antananarivo</p>
+                <p class="text-xs mt-1 sm:mt-2">Keep Learning!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mascot Character -->
+    <div class="mascot-character hidden sm:block" onclick="mascotClick()">
+        <div class="speech-bubble">继续加油! Keep coding!</div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="absolute top-3 right-3 sm:top-4 sm:right-4 text-2xl sm:text-3xl hover:text-duo-red"
+                style="color: var(--text-secondary)" onclick="closeProjectModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Fireworks Animation - Version améliorée
+        const canvas = document.getElementById('fireworks-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            class FireworkParticle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = (Math.random() - 0.5) * 8;
+                    this.vy = (Math.random() - 0.5) * 8;
+                    this.size = Math.random() * 5 + 2;
+                    this.color = color;
+                    this.alpha = 1;
+                    this.gravity = 0.05;
+                    this.decay = 0.012;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vy += this.gravity;
+                    this.alpha -= this.decay;
+                    return this.alpha > 0;
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            function createFirework() {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height * 0.5;
+                const colors = [
+                    '#58CC02', '#FFC800', '#1CB0F6', '#FF4B4B', '#CE82FF',
+                    '#FF9EE0', '#00A86B', '#E63946', '#D4AF37', '#FFB7C5'
+                ];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+
+                // Crée une explosion avec plus de particules
+                for (let i = 0; i < 50; i++) {
+                    particles.push(new FireworkParticle(x, y, color));
+                }
+            }
+
+            // Lance plusieurs feux d'artifice en même temps
+            function launchFireworkSalvo() {
+                const count = Math.floor(Math.random() * 5) + 3; // 3-8 explosions
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => createFirework(), i * 100);
+                }
+            }
+
+            function animateFireworks() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                particles = particles.filter(p => p.update());
+                particles.forEach(p => p.draw());
+
+                // Lance des salves de feux d'artifice
+                if (Math.random() < 0.02) {
+                    launchFireworkSalvo();
+                }
+
+                requestAnimationFrame(animateFireworks);
+            }
+
+            animateFireworks();
+
+            // Lance une salve initiale
+            setTimeout(() => {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => launchFireworkSalvo(), i * 300);
+                }
+            }, 1000);
+        }
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate sections on scroll
+        gsap.utils.toArray('.duo-card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power2.out'
+            });
+        });
+
+        // Animate skill nodes
+        gsap.utils.toArray('.skill-node').forEach((node, i) => {
+            gsap.from(node, {
+                scrollTrigger: {
+                    trigger: node,
+                    start: 'top 85%',
+                },
+                scale: 0,
+                rotation: 360,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: 'back.out(1.7)'
+            });
+        });
+
+        // Theme Switcher
+        function changeTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.closest('.theme-button').classList.add('active');
+
+            // Sauvegarde le thème
+            localStorage.setItem('theme', theme);
+            
+            // Lance une petite célébration lors du changement de thème
+            triggerCelebration();
+        }
+
+        // Charge le thème sauvegardé
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+            document.querySelectorAll('.theme-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.theme-${savedTheme}`).classList.add('active');
+        });
+
+        // Scroll functions
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            // Ferme le menu mobile si ouvert
+            document.getElementById('mobileMenu').classList.add('hidden');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show/hide back to top button
+        window.addEventListener('scroll', () => {
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('hidden');
+            } else {
+                backToTop.classList.add('hidden');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        // Mascot interaction
+        function mascotClick() {
+            const messages = [
+                '你太棒了! You\'re awesome!',
+                '继续加油! Keep it up!',
+                '做得好! Great work!',
+                '完美! Perfect!',
+                '太厉害了! Amazing!',
+                '超棒! Superb!',
+                '加油! Keep going!'
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Affiche un message temporaire dans une bulle
+            const speechBubble = document.querySelector('.speech-bubble');
+            if (speechBubble) {
+                speechBubble.textContent = randomMessage;
+                speechBubble.style.opacity = '1';
+                setTimeout(() => {
+                    speechBubble.style.opacity = '0';
+                    speechBubble.textContent = '继续加油! Keep coding!';
+                }, 2000);
+            }
+            
+            triggerCelebration();
+        }
+
+        // Celebration confetti et feux d'artifice
+        function triggerCelebration() {
+            // Confetti
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.background = ['#58CC02', '#FFC800', '#1CB0F6', '#FF4B4B', '#CE82FF', '#FF9EE0'][Math.floor(Math.random() * 6)];
+                    confetti.style.animationDelay = Math.random() * 0.3 + 's';
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 3000);
+                }, i * 30);
+            }
+
+            // Lance des feux d'artifice supplémentaires
+            if (canvas) {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        for (let j = 0; j < 3; j++) {
+                            setTimeout(() => createFirework(), j * 100);
+                        }
+                    }, i * 200);
+                }
+            }
+        }
+
+        // Project Modal
+        const projectData = {
+            1: {
+                title: 'E-commerce Platform',
+                description: 'Une plateforme e-commerce complète avec gestion de produits, panier d\'achats, paiement Stripe et dashboard administrateur.',
+                features: ['Authentification JWT', 'Paiement sécurisé Stripe', 'Dashboard admin temps réel', 'Gestion de stock', 'API RESTful'],
+                tech: ['React', 'Spring Boot', 'MongoDB', 'Stripe API', 'Redis'],
+                image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800',
+                github: '#',
+                demo: '#'
+            },
+            2: {
+                title: 'Finance Dashboard',
+                description: 'Dashboard financier avec visualisations de données interactives, graphiques D3.js et analyses en temps réel.',
+                features: ['Graphiques interactifs D3.js', 'Analyses prédictives', 'Export PDF/Excel', 'Multi-devises', 'API temps réel'],
+                tech: ['React', 'TypeScript', 'D3.js', 'Node.js', 'PostgreSQL'],
+                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800',
+                github: '#',
+                demo: '#'
+            },
+            3: {
+                title: 'Portfolio Artistique',
+                description: 'Site portfolio immersif avec animations GSAP sophistiquées et expérience utilisateur unique.',
+                features: ['Animations GSAP avancées', 'Parallax scrolling', 'Galerie interactive', 'Mode sombre', 'SEO optimisé'],
+                tech: ['Next.js', 'GSAP', 'Tailwind CSS', 'Framer Motion'],
+                image: 'https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?q=80&w=800',
+                github: '#',
+                demo: '#'
+            },
+            4: {
+                title: 'Inventory Manager',
+                description: 'Système de gestion d\'inventaire complet avec reporting avancé et tableaux de bord analytiques.',
+                features: ['Gestion multi-entrepôts', 'Reporting avancé', 'Alertes de stock', 'Export de données', 'API RESTful'],
+                tech: ['Java', 'Spring Boot', 'React', 'MySQL', 'Docker'],
+                image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800',
+                github: '#',
+                demo: '#'
+            },
+            5: {
+                title: 'Weather App',
+                description: 'Application météo temps réel avec géolocalisation, prévisions détaillées et interface intuitive.',
+                features: ['Géolocalisation', 'Prévisions 7 jours', 'Données temps réel', 'Interface responsive', 'Mode sombre'],
+                tech: ['React', 'OpenWeather API', 'Geolocation API', 'Chart.js'],
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800',
+                github: '#',
+                demo: '#'
+            },
+            6: {
+                title: 'REST API Platform',
+                description: 'Plateforme API REST sécurisée avec authentification JWT et documentation Swagger complète.',
+                features: ['Authentification JWT', 'Documentation Swagger', 'Rate limiting', 'Logs centralisés', 'Tests automatisés'],
+                tech: ['Spring Boot', 'JWT', 'Swagger', 'PostgreSQL', 'Docker'],
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800',
+                github: '#',
+                demo: '#'
+            }
+        };
+
+        function openProjectModal(id) {
+            const project = projectData[id];
+            const modal = document.getElementById('projectModal');
+            const content = document.getElementById('modalContent');
+
+            content.innerHTML = `
+                <img src="${project.image}" alt="${project.title}" class="w-full h-48 sm:h-56 md:h-64 object-cover rounded-xl sm:rounded-2xl mb-4 sm:mb-6">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-black mb-3 sm:mb-4 font-japanese">${project.title}</h2>
+                <p class="text-sm sm:text-base mb-4 sm:mb-6" style="color: var(--text-secondary)">${project.description}</p>
+                
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 flex items-center gap-2">
+                    <i class="bi bi-star-fill text-duo-yellow"></i> Fonctionnalités
+                </h3>
+                <ul class="space-y-1 sm:space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+                    ${project.features.map(f => `<li class="flex items-center gap-2"><span class="text-duo-green">✓</span> ${f}</li>`).join('')}
+                </ul>
+                
+                <h3 class="text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 flex items-center gap-2">
+                    <i class="bi bi-tools text-duo-blue"></i> Technologies
+                </h3>
+                <div class="flex flex-wrap gap-1 sm:gap-2 mb-6 sm:mb-8">
+                    ${project.tech.map(t => `<span class="bg-duo-blue/20 text-duo-blue px-2 sm:px-3 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold">${t}</span>`).join('')}
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a href="${project.github}" target="_blank" class="btn-duo flex-1 text-center text-sm sm:text-base py-2 sm:py-3">
+                        <i class="bx bxl-github mr-1 sm:mr-2"></i>
+                        View Code
+                    </a>
+                    <a href="${project.demo}" target="_blank" class="btn-duo btn-duo-secondary flex-1 text-center text-sm sm:text-base py-2 sm:py-3">
+                        <i class="bi bi-box-arrow-up-right mr-1 sm:mr-2"></i>
+                        Live Demo
+                    </a>
+                </div>
+            `;
+
+            modal.classList.add('active');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('projectModal').classList.remove('active');
+        }
+
+        // Close modal on outside click
+        document.getElementById('projectModal').addEventListener('click', (e) => {
+            if (e.target.id === 'projectModal') {
+                closeProjectModal();
+            }
+        });
+
+        // Easter egg - Konami code
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    triggerCelebration();
+                    
+                    // Affiche un message spécial
+                    const message = document.createElement('div');
+                    message.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-duo-green text-white px-8 py-4 rounded-full text-2xl font-bold z-[10000] animate-pulse';
+                    message.textContent = 'CHEAT CODE ACTIVATED! +1000 XP!';
+                    document.body.appendChild(message);
+                    setTimeout(() => message.remove(), 3000);
+                    
+                    // Met à jour le niveau temporairement
+                    const levelBadges = document.querySelectorAll('.level-badge');
+                    levelBadges.forEach(badge => {
+                        badge.textContent = '4';
+                    });
+                    
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Initialize animations
+        window.addEventListener('load', () => {
+            gsap.from('.achievement-badge', {
+                scale: 0,
+                rotation: 720,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'back.out(1.7)'
+            });
+
+            // Animate mascot
+            gsap.to('.mascot-character', {
+                y: -10,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: 'power1.inOut'
+            });
+        });
+    </script>
+</body>
+
+</html>
